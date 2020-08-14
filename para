@@ -1,0 +1,23 @@
+
+   InvalidArgumentException 
+
+  Attribute [resoruce] does not exist.
+
+  at vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php:92
+    88|      */
+    89|     public function attribute($key, $value)
+    90|     {
+    91|         if (! in_array($key, $this->allowedAttributes)) {
+  > 92|             throw new InvalidArgumentException("Attribute [{$key}] does not exist.");
+    93|         }
+    94| 
+    95|         $this->attributes[Arr::get($this->aliases, $key, $key)] = $value;
+    96|
+
+      [2m+2 vendor frames [22m
+  3   routes/web.php:22
+      Illuminate\Support\Facades\Facade::__callStatic("resoruce")
+
+      [2m+4 vendor frames [22m
+  8   app/Providers/RouteServiceProvider.php:63
+      Illuminate\Routing\RouteRegistrar::group("/home/reoarrieta/lampp/htdocs/mi-proyecto-laravel/routes/web.php")
